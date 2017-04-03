@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="content">
+    <div class="row medium-8 large-7 columns">
+        {% for post in posts %}
+            <div class="blog-post">
+                <h3>{{ post.title }}<small>{{ post.posted_date }}</small></h3>
+
+                <img class="thumbnail" src="{{ post.image }}">
+                <p>{{ post.content }}</p>
+                <div class="callout">
+                    <ul class="menu simple">
+                        <li><a href="#">Author: Kamal Daniels</a></li>
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<!--<div class="row column">-->
+    <!--<ul class="pagination" role="navigation" aria-label="Pagination">-->
+        <!--<li class="disabled">Previous</li>-->
+        <!--<li class="current"><span class="show-for-sr">You're on page</span> 1</li>-->
+        <!--<li><a href="#" aria-label="Page 2">2</a></li>-->
+        <!--<li><a href="#" aria-label="Page 3">3</a></li>-->
+        <!--<li><a href="#" aria-label="Page 4">4</a></li>-->
+        <!--<li class="ellipsis"></li>-->
+        <!--<li><a href="#" aria-label="Page 12">12</a></li>-->
+        <!--<li><a href="#" aria-label="Page 13">13</a></li>-->
+        <!--<li><a href="#" aria-label="Next page">Next</a></li>-->
+    <!--</ul>-->
+<!--</div>-->
+{% endblock %}
