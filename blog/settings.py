@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'djangae.contrib.security',
     'blog',
     'posts',
+    'markdownx',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,13 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR + '/static/'
+
+MARKDOWNX_MARKDOWN_EXTENSIONS = [
+    'markdown.extensions.extra',
+    'markdown.extensions.fenced_code',
+    'markdown.extensions.nl2br',
+    'markdown.extensions.smarty',
+    'markdown.extensions.codehilite',
+    'markdown.extensions.nl2br',
+]

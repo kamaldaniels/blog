@@ -20,7 +20,7 @@ from posts import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^_ah/', include('djangae.urls')),
+    url(r'^markdownx/', include('markdownx.urls')),
     url(r'^post/(?P<slug>[^/]+)/$', views.post, name='post'),
     url(r'^$', views.index, name='index'),
-
 ]

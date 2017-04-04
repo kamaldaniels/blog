@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}" type="text/css">
     <style>
         #content {padding-top: 2rem;}
-        .blog-post {margin-bottom: 3rem}
+        .blog-post {margin-bottom: 3rem;}
         body {font-family: 'Open Sans', sans-serif;}
         h1,h2,h3 {font-family: 'Rubik', sans-serif;}
+        .codehilite {padding:1rem;font-size:90%;margin-bottom:16px;}
     </style>
 </head>
 <body>
@@ -24,5 +26,6 @@
     </div>
     {% block content %}
     {% endblock %}
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 </body>
 </html>
