@@ -5,17 +5,18 @@
     <div class="row medium-8 large-7 columns">
         {% for post in posts %}
             <div class="blog-post">
-                <h3>{{ post.title }} <small>{{ post.posted_date }}</small></h3>
-
+                <h3><a href="{% url 'post' post.slug %}">{{ post.title }}</a> <small>{{ post.posted_date|date:"DATE_FORMAT" }}</small></h3>
                 {% if post.image %}<img class="thumbnail" src="{{ post.image.url }}">{% endif %}
                 <p>{{ post.content }}</p>
-                <div class="callout">
-                    <ul class="menu simple">
-                        <li><a href="#">Author: Kamal Daniels</a></li>
-                    </ul>
-                </div>
+                <ul class="menu simple">
+                    <li>Author: Kamal Daniels</li>
+                </ul>
             </div>
         {% endfor %}
+
+        {% if specific_post %}
+            <a href="/">Read more from Kamal's Blog</a>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

@@ -8,6 +8,11 @@ class Post(models.Model):
     content = models.TextField()
     image = models.ImageField(blank=True)
     posted_date = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(unique=True)
+
+    @models.permalink
+    def get_absolute_url(self):
+        return 'blog:post', (self.slug,)
 
     def __str__(self):
         return self.title

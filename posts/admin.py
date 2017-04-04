@@ -6,4 +6,8 @@ from .models import Post
 admin.site.unregister(User)
 admin.site.unregister(Group)
 
-admin.site.register(Post)
+
+class PostAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("title",)}
+
+admin.site.register(Post, PostAdmin)
