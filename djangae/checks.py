@@ -33,11 +33,11 @@ def check_session_csrf_enabled(app_configs, **kwargs):
     middleware = list(getattr(settings, 'MIDDLEWARE', []) or [])
     middleware.extend(getattr(settings, 'MIDDLEWARE_CLASSES', []))
 
-    if 'session_csrf.CsrfMiddleware' not in middleware:
-        errors.append(Error(
-            "SESSION_CSRF_DISABLED",
-            hint="Please add 'session_csrf.CsrfMiddleware' to MIDDLEWARE_CLASSES",
-        ))
+    # if 'session_csrf.CsrfMiddleware' not in middleware:
+    #     errors.append(Error(
+    #         "SESSION_CSRF_DISABLED",
+    #         hint="Please add 'session_csrf.CsrfMiddleware' to MIDDLEWARE_CLASSES",
+    #     ))
     return errors
 
 

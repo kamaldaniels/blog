@@ -1,0 +1,10 @@
+appdirs==1.4.3
+djangae==0.9.9
+Django==1.10.6
+gae-installer==1.9.50.4
+olefile==0.44
+packaging==16.8
+Pillow==4.0.0
+posts==0.2.2
+pyparsing==2.2.0
+six==1.10.0

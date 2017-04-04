@@ -25,7 +25,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '=l60#h8mgy1jz$c4+e#&p*w+(o2i*hb@m5_rt*4geys3+p1__z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine'):
+    DEBUG = False
+else:
+    DEBUG = True
+
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SECURE = not DEBUG
 
 ALLOWED_HOSTS = ['*']
 
@@ -43,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'djangae.contrib.security',
     'blog',
+    'posts',
 ]
 
 MIDDLEWARE = [
@@ -117,6 +124,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/

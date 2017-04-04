@@ -7,7 +7,7 @@
             <div class="blog-post">
                 <h3>{{ post.title }} <small>{{ post.posted_date }}</small></h3>
 
-                <img class="thumbnail" src="{{ post.image }}">
+                {% if post.image %}<img class="thumbnail" src="{{ post.image.url }}">{% endif %}
                 <p>{{ post.content }}</p>
                 <div class="callout">
                     <ul class="menu simple">
