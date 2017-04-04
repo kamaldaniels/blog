@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post
+from .models import Post, get_posts
 
 
 def index(request):
-    posts = Post.objects.all().order_by('-posted_date')
+    posts = get_posts()
+
     context = {'posts': posts,
                'specific_post': False}
     return render(request, 'index.html', context)
