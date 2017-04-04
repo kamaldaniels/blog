@@ -4,7 +4,6 @@ from .models import Post, get_posts
 
 def index(request):
     posts = get_posts()
-
     context = {'posts': posts,
                'specific_post': False}
     return render(request, 'index.html', context)
